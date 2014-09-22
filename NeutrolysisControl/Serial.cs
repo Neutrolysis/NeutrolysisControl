@@ -62,6 +62,7 @@ namespace NeutrolysisControl
 		}
 		public String nextMsg()
 		{
+			//I think its last test :/
 			if (hasMsg())
 				return receivedDataQueue.Dequeue();
 			return null;
