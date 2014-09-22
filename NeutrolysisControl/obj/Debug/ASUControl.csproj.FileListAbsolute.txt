@@ -1,0 +1,17 @@
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\bin\Debug\ASUControl.exe.config
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\bin\Debug\ASUControl.exe
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\bin\Debug\ASUControl.pdb
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.csprojResolveAssemblyReference.cache
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.Form1.resources
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.Properties.Resources.resources
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.csproj.GenerateResource.Cache
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.exe
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.pdb
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\bin\Debug\am\ASUControl.resources.dll
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\bin\Debug\en-US\ASUControl.resources.dll
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.Form2.resources
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.Form1.am.resources
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.Form1.en-US.resources
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\am\ASUControl.resources.dll
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\en-US\ASUControl.resources.dll
+C:\Users\N1amr\Documents\Visual Studio 2012\Projects\ASUControl\ASUControl\obj\Debug\ASUControl.Form3.resources
