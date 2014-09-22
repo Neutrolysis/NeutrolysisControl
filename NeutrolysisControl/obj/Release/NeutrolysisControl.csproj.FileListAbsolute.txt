@@ -13,3 +13,18 @@ C:\Users\N1amr\Documents\Visual Studio 2012\Projects\NeutrolysisControl\Neutroly
 C:\Users\N1amr\Documents\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.Properties.Resources.resources
 C:\Users\N1amr\Documents\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.Form1.am.resources
 C:\Users\N1amr\Documents\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.Form1.en-US.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Release\Neutrolysis Control.exe.config
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\Neutrolysis Control.exe
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\Neutrolysis Control.pdb
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Release\Neutrolysis Control.exe
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Release\Neutrolysis Control.pdb
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Release\am\Neutrolysis Control.resources.dll
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Release\en-US\Neutrolysis Control.resources.dll
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.csprojResolveAssemblyReference.cache
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.Form1.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.Properties.Resources.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.Form1.am.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.Form1.en-US.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\NeutrolysisControl.csproj.GenerateResource.Cache
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\am\Neutrolysis Control.resources.dll
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Release\en-US\Neutrolysis Control.resources.dll
