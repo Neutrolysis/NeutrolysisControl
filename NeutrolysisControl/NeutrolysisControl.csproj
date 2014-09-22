@@ -7,7 +7,7 @@
     <ProjectGuid>{B5717E34-3E2B-49E9-BF6D-FC9DE687B297}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ASUControl</RootNamespace>
+    <RootNamespace>NeutrolysisControl</RootNamespace>
     <AssemblyName>Neutrolysis Control</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

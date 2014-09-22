@@ -6,7 +6,7 @@ using System.IO.Ports;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ASUControl
+namespace NeutrolysisControl
 {
 	public class Serial
 	{

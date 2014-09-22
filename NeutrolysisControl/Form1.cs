@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.IO.Ports;          // Serial stuff in here.
 using System.Threading;
 
-namespace ASUControl
+namespace NeutrolysisControl
 {
 	public partial class Form1 : Form
 	{
@@ -113,12 +113,12 @@ namespace ASUControl
 			if (chkLED1.Checked == true)
 			{
 				zigbee.sendCommand("0");
-				picLED1.Image = ASUControl.Properties.Resources.led_ON;
+				picLED1.Image = NeutrolysisControl.Properties.Resources.led_ON;
 			}
 			else if (chkLED1.Checked == false)
 			{
 				zigbee.sendCommand("1");
-				picLED1.Image = ASUControl.Properties.Resources.led_OFF;
+				picLED1.Image = NeutrolysisControl.Properties.Resources.led_OFF;
 			}
 		}
 		private void picLED1_Click(object sender, EventArgs e)
@@ -130,12 +130,12 @@ namespace ASUControl
 			if (chkLED2.Checked == true)
 			{
 				zigbee.sendCommand("2");
-				picLED2.Image = ASUControl.Properties.Resources.led_ON;
+				picLED2.Image = NeutrolysisControl.Properties.Resources.led_ON;
 			}
 			else if (chkLED2.Checked == false)
 			{
 				zigbee.sendCommand("3");
-				picLED2.Image = ASUControl.Properties.Resources.led_OFF;
+				picLED2.Image = NeutrolysisControl.Properties.Resources.led_OFF;
 			}
 		}
 		private void picLED2_Click(object sender, EventArgs e)
@@ -192,7 +192,7 @@ namespace ASUControl
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-		{ MessageBox.Show("ASUControl\nBy:\n\n\n\n\n\n\n\n\n\n"); }
+		{ MessageBox.Show("NeutrolysisControl\nBy:\n\n\n\n\n\n\n\n\n\n"); }
 
 		private void portToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
 		{
@@ -256,8 +256,8 @@ namespace ASUControl
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			this.MaximizeBox = false;
-			picLED1.Image = ASUControl.Properties.Resources.led_OFF;
-			picLED2.Image = ASUControl.Properties.Resources.led_OFF;
+			picLED1.Image = NeutrolysisControl.Properties.Resources.led_OFF;
+			picLED2.Image = NeutrolysisControl.Properties.Resources.led_OFF;
 		}
 
 		private void chkWindow1_CheckedChanged(object sender, EventArgs e)

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Media;
 
-namespace ASUControl
+namespace NeutrolysisControl
 {
 	class Alarm
 	{
@@ -14,7 +14,7 @@ namespace ASUControl
 		bool isPlaying = false;
 		public Alarm()
 		{
-			setAlarmFile(ASUControl.Properties.Resources.fire_alert);
+			setAlarmFile(NeutrolysisControl.Properties.Resources.fire_alert);
 			open();
 		}
 		public Alarm(System.IO.UnmanagedMemoryStream file)

@@ -1,4 +1,4 @@
-﻿namespace ASUControl
+﻿namespace NeutrolysisControl
 {
 	partial class Form1
 	{
