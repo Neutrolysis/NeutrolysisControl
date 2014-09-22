@@ -62,8 +62,6 @@ namespace NeutrolysisControl
 		}
 		public String nextMsg()
 		{
-			//I think its last test :/
-			// No its not the last, test when github is closed
 			if (hasMsg())
 				return receivedDataQueue.Dequeue();
 			return null;
