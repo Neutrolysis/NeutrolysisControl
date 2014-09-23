@@ -222,7 +222,13 @@ namespace NeutrolysisControl
 			if (chkProjector.Checked == true)
 				zigbee.sendCommand("9");
 			else if (chkProjector.Checked == false)
+			{
+				//Thread t = new Thread(new ThreadStart(zigbee.sendCommand));
 				zigbee.sendCommand("a");
+				//Thread.Sleep(500) ;
+				//for (int i = 0; i < 100000; i++) ;
+				//zigbee.sendCommand("a");
+			}
 			btnZoomIn.Enabled = chkProjector.Checked;
 			btnZoomOut.Enabled = chkProjector.Checked;
 		}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Text;
 using System.IO.Ports;
 using System.Threading.Tasks;
@@ -36,6 +37,11 @@ namespace NeutrolysisControl
 				serialPort.Close();
 		}
 		public void sendCommand(String s)
+		{
+			//Thread t;
+			send(s);
+		}
+		public void send(String s)
 		{
 			var form = Form.ActiveForm as MainForm;
 			try
