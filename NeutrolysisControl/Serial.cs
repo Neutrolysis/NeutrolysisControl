@@ -10,8 +10,8 @@ namespace NeutrolysisControl
 {
 	public class Serial
 	{
-		public static String DEFAULT_PORT_NAME = "COM26";
-		public static int BAUD_RATE = 9600;
+		public static String DEFAULT_PORT_NAME = Properties.Settings.Default.DEFAULT_PORT_NAME;
+		public static int BAUD_RATE = Properties.Settings.Default.BAUD_RATE;
 
 		private SerialPort serialPort;
 
@@ -37,7 +37,7 @@ namespace NeutrolysisControl
 		}
 		public void sendCommand(String s)
 		{
-			var form = Form.ActiveForm as Form1;
+			var form = Form.ActiveForm as MainForm;
 			try
 			{
 				form.logPrint("Sending: " + s + "\r\n");

@@ -13,14 +13,15 @@ using System.Threading;
 
 namespace NeutrolysisControl
 {
-	public partial class Form1 : Form
+	public partial class MainForm : Form
 	{
 		Serial zigbee = new Serial();
 
-		int FIRE_ALARM_MIN_TEMP = 27;
+		int FIRE_ALARM_MIN_TEMP = NeutrolysisControl.Properties.Settings.Default.FIRE_ALARM_MIN_TEMP;
 
-		public Form1()
+		public MainForm()
 		{
+
 			InitializeComponent();
 			putCOMSIntoMenu();
 			acTemp = (int)numericUpDown1.Value;
@@ -50,7 +51,7 @@ namespace NeutrolysisControl
 			else
 			{
 				portToolStripMenuItem.DropDownItems.Add("No Ports available, press any key to exit.");
-			} portToolStripMenuItem.DropDownItems.Add("------"); portToolStripMenuItem.DropDownItems.Add("Update");
+			} portToolStripMenuItem.DropDownItems.Add("-"); portToolStripMenuItem.DropDownItems.Add("Update");
 
 		}
 

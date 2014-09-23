@@ -22,5 +22,41 @@ namespace NeutrolysisControl.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int FIRE_ALARM_MIN_TEMP {
+            get {
+                return ((int)(this["FIRE_ALARM_MIN_TEMP"]));
+            }
+            set {
+                this["FIRE_ALARM_MIN_TEMP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM26")]
+        public string DEFAULT_PORT_NAME {
+            get {
+                return ((string)(this["DEFAULT_PORT_NAME"]));
+            }
+            set {
+                this["DEFAULT_PORT_NAME"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9600")]
+        public int BAUD_RATE {
+            get {
+                return ((int)(this["BAUD_RATE"]));
+            }
+            set {
+                this["BAUD_RATE"] = value;
+            }
+        }
     }
 }
