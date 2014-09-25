@@ -41,6 +41,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.lblHumidity = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.button1 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.cmbMode = new System.Windows.Forms.ComboBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -75,6 +76,7 @@
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+			this.tmrConnection = new System.Windows.Forms.Timer(this.components);
 			this.tabControl2.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
@@ -158,6 +160,7 @@
 			// tabPage3
 			// 
 			this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+			this.tabPage3.Controls.Add(this.button1);
 			this.tabPage3.Controls.Add(this.label2);
 			this.tabPage3.Controls.Add(this.cmbMode);
 			this.tabPage3.Controls.Add(this.groupBox4);
@@ -166,6 +169,13 @@
 			this.tabPage3.Controls.Add(this.groupBox1);
 			resources.ApplyResources(this.tabPage3, "tabPage3");
 			this.tabPage3.Name = "tabPage3";
+			// 
+			// button1
+			// 
+			resources.ApplyResources(this.button1, "button1");
+			this.button1.Name = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click_1);
 			// 
 			// label2
 			// 
@@ -430,7 +440,12 @@
 			resources.ApplyResources(this.notifyIcon1, "notifyIcon1");
 			this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
 			// 
-			// Form1
+			// tmrConnection
+			// 
+			this.tmrConnection.Enabled = true;
+			this.tmrConnection.Tick += new System.EventHandler(this.tmrConnection_Tick);
+			// 
+			// MainForm
 			// 
 			this.AcceptButton = this.btnSerialSend;
 			resources.ApplyResources(this, "$this");
@@ -438,7 +453,7 @@
 			this.Controls.Add(this.tabControl2);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
-			this.Name = "Form1";
+			this.Name = "MainForm";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tabControl2.ResumeLayout(false);
@@ -513,6 +528,8 @@
 		private System.Windows.Forms.PictureBox picLED2;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label lblSmoke;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Timer tmrConnection;
 	}
 }
 

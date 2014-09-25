@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;          // Serial stuff in here.
 using System.Threading;
+using System.Diagnostics;
+using System.Threading;
 
 namespace NeutrolysisControl
 {
@@ -17,11 +19,10 @@ namespace NeutrolysisControl
 	{
 		Serial zigbee = new Serial();
 
-		int FIRE_ALARM_MIN_TEMP = NeutrolysisControl.Properties.Settings.Default.FIRE_ALARM_MIN_TEMP;
+		SensorUnit sensors = new SensorUnit();
 
 		public MainForm()
 		{
-
 			InitializeComponent();
 			putCOMSIntoMenu();
 			acTemp = (int)numericUpDown1.Value;
@@ -29,6 +30,7 @@ namespace NeutrolysisControl
 			{
 				zigbee.setupPort(Serial.DEFAULT_PORT_NAME, Serial.BAUD_RATE);
 				portToolStripMenuItem.Text = "Port (" + zigbee.getPortName() + ")";
+				//zigbee.sendCommand("z");
 			}
 			catch (System.IO.IOException error)
 			{
@@ -55,52 +57,67 @@ namespace NeutrolysisControl
 
 		}
 
+
 		public void logPrint(String msg)
 		{
 			txtSerial.Text = msg + "\n\n" + txtSerial.Text;
 		}
 
-		String receivedMsg;
-		Alarm fileAlarm = new Alarm();
+		Alarm fireAlarm = new Alarm();
 		void timer1_Tick(object sender, EventArgs e) //Procssing Monitoring
 		{
 			while (zigbee.hasMsg())
 			{
-				receivedMsg = zigbee.nextMsg();
+				String receivedMsg = zigbee.nextMsg();
 				logPrint(receivedMsg);
 
 				try
 				{
 					//Extract key and value from a command
-					char key;
-					string value;
-
-					key = receivedMsg[0];
-					value = receivedMsg.Substring(1, receivedMsg.Length - 1);
+					char key = receivedMsg[0];
+					string value = receivedMsg.Substring(1, receivedMsg.Length - 1);
+					double receivedValue = double.Parse(value);
 
 					//	switching on key
 					switch (key)
 					{
 						case 'T':
 							lblTemp.Text = value;
-							double receivedValue = double.Parse(value);
-							if (receivedValue > FIRE_ALARM_MIN_TEMP)
-							{
-								lblTemp.ForeColor = Color.Red;
-								fileAlarm.play();
-							}
-							else
-							{
-								lblTemp.ForeColor = Color.Green;
-								fileAlarm.stop();
-							}
+							sensors.temp = receivedValue;
 							break;
 						case 'H':
 							lblHumidity.Text = value;
+							sensors.humidity = receivedValue;
 							break;
 						case 'S':
 							lblSmoke.Text = value;
+							sensors.smoke = receivedValue;
 							break;
+						//case 'R':
+						//	if (receivedValue == 1 && chkLED1.Checked == false)
+						//		chkLED1.Checked = true;
+						//	else if (receivedValue == 0 && chkLED1.Checked == true)
+						//		chkLED1.Checked = false;
+						//	break;
+						//case 'L':
+						//	if (receivedValue == 1 && chkLED2.Checked == false)
+						//		chkLED2.Checked = true;
+						//	else if (receivedValue == 0 && chkLED2.Checked == true)
+						//		chkLED2.Checked = false;
+						//	break;
+					}
+
+					if (sensors.thereIsFire())
+					{
+						lblSmoke.ForeColor = Color.Red;
+						lblTemp.ForeColor = Color.Red;
+						fireAlarm.play();
+					}
+					else
+					{
+						lblSmoke.ForeColor = Color.Green;
+						lblTemp.ForeColor = Color.Green;
+						fireAlarm.stop();
 					}
 				}
 				catch (IndexOutOfRangeException error) { logPrint(error.Message); }
@@ -242,20 +259,20 @@ namespace NeutrolysisControl
 					chkLED1.Checked = false;
 					chkLED2.Checked = false;
 					chkProjector.Checked = false;
-					chkDoor1.Checked = true;
-					chkDoor2.Checked = true;
-					chkWindow1.Checked = true;
-					chkWindow2.Checked = true;
+					chkDoor1.Checked = false;
+					chkDoor2.Checked = false;
+					chkWindow1.Checked = false;
+					chkWindow2.Checked = false;
 					break;
 				case 1:
 					chkAC.Checked = true;
 					chkLED1.Checked = false;
 					chkLED2.Checked = false;
 					chkProjector.Checked = true;
-					chkDoor1.Checked = true;
-					chkDoor2.Checked = true;
-					chkWindow1.Checked = true;
-					chkWindow2.Checked = true;
+					chkDoor1.Checked = false;
+					chkDoor2.Checked = false;
+					chkWindow1.Checked = false;
+					chkWindow2.Checked = false;
 					break;
 			}
 		}
@@ -273,6 +290,34 @@ namespace NeutrolysisControl
 				zigbee.sendCommand("4");
 			else if (chkWindow1.Checked == false)
 				zigbee.sendCommand("5");
+		}
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			zigbee.sendCommand("z");
+		}
+
+		private void tmrConnection_Tick(object sender, EventArgs e)
+		{
+			if (!zigbee.isConnected())
+			{
+				tmrConnection.Enabled = false;
+				DialogResult dialogResult;
+				bool successful = false;
+				do
+				{
+					dialogResult = MessageBox.Show("Connection lost\r\nConnect again then press OK or Cancel to exit", "Connection lost", MessageBoxButtons.OKCancel);
+					if (dialogResult == DialogResult.Cancel)
+					{
+						zigbee.closePort();
+						Process.GetCurrentProcess().Kill();
+					}
+					try { zigbee.setupPort(); successful = true; }
+					catch (Exception err) { logPrint(err.Message); }
+
+				} while (!successful);
+				tmrConnection.Enabled = true;
+			}
 		}
 	}
 }

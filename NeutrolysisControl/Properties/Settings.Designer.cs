@@ -25,7 +25,7 @@ namespace NeutrolysisControl.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        [global::System.Configuration.DefaultSettingValueAttribute("70")]
         public int FIRE_ALARM_MIN_TEMP {
             get {
                 return ((int)(this["FIRE_ALARM_MIN_TEMP"]));
@@ -56,6 +56,18 @@ namespace NeutrolysisControl.Properties {
             }
             set {
                 this["BAUD_RATE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int FIRE_ALARM_MIN_SMOKE {
+            get {
+                return ((int)(this["FIRE_ALARM_MIN_SMOKE"]));
+            }
+            set {
+                this["FIRE_ALARM_MIN_SMOKE"] = value;
             }
         }
     }

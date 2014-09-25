@@ -72,6 +72,10 @@ namespace NeutrolysisControl
 				return receivedDataQueue.Dequeue();
 			return null;
 		}
+		public bool isConnected()
+		{
+			return serialPort.IsOpen;
+		}
 
 	}
 }
