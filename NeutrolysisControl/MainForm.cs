@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.IO.Ports;          // Serial stuff in here.
 using System.Threading;
 using System.Diagnostics;
-using System.Threading;
 
 namespace NeutrolysisControl
 {
@@ -64,6 +63,7 @@ namespace NeutrolysisControl
 		}
 
 		Alarm fireAlarm = new Alarm();
+		EnergyCalculator energy = new EnergyCalculator();
 		void timer1_Tick(object sender, EventArgs e) //Procssing Monitoring
 		{
 			while (zigbee.hasMsg())
@@ -93,18 +93,24 @@ namespace NeutrolysisControl
 							lblSmoke.Text = value;
 							sensors.smoke = receivedValue;
 							break;
-						//case 'R':
-						//	if (receivedValue == 1 && chkLED1.Checked == false)
-						//		chkLED1.Checked = true;
-						//	else if (receivedValue == 0 && chkLED1.Checked == true)
-						//		chkLED1.Checked = false;
-						//	break;
-						//case 'L':
-						//	if (receivedValue == 1 && chkLED2.Checked == false)
-						//		chkLED2.Checked = true;
-						//	else if (receivedValue == 0 && chkLED2.Checked == true)
-						//		chkLED2.Checked = false;
-						//	break;
+						case 'W':
+							lblPower.Text = (receivedValue/1000*220).ToString() + " W";
+							sensors.power = receivedValue;
+							energy.addCurrentReading(receivedValue);
+							lblEnergy.Text = energy.getConsumedPower().ToString();
+							break;
+						case 'R':
+							if (receivedValue == 1 && chkLED1.Checked == false)
+								chkLED1.Checked = true;
+							else if (receivedValue == 0 && chkLED1.Checked == true)
+								chkLED1.Checked = false;
+							break;
+						case 'L':
+							if (receivedValue == 1 && chkLED2.Checked == false)
+								chkLED2.Checked = true;
+							else if (receivedValue == 0 && chkLED2.Checked == true)
+								chkLED2.Checked = false;
+							break;
 					}
 
 					if (sensors.thereIsFire())
@@ -169,6 +175,7 @@ namespace NeutrolysisControl
 		private void button1_Click(object sender, EventArgs e)
 		{
 			zigbee.sendCommand(txtSerialMessage.Text + "\n");
+			//zigbee.receivedDataQueue.Enqueue(txtSerialMessage.Text);
 			txtSerialMessage.Text = "";
 		}
 
@@ -201,12 +208,7 @@ namespace NeutrolysisControl
 
 		private void trackBar1_Scroll(object sender, EventArgs e)
 		{
-			for (int i = 0; i < (0); i++)
-			{
-
-			}
 			numericUpDown1.Value = trackBar1.Value;
-
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -240,11 +242,7 @@ namespace NeutrolysisControl
 				zigbee.sendCommand("9");
 			else if (chkProjector.Checked == false)
 			{
-				//Thread t = new Thread(new ThreadStart(zigbee.sendCommand));
 				zigbee.sendCommand("a");
-				//Thread.Sleep(500) ;
-				//for (int i = 0; i < 100000; i++) ;
-				//zigbee.sendCommand("a");
 			}
 			btnZoomIn.Enabled = chkProjector.Checked;
 			btnZoomOut.Enabled = chkProjector.Checked;
@@ -318,6 +316,15 @@ namespace NeutrolysisControl
 				} while (!successful);
 				tmrConnection.Enabled = true;
 			}
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			DateTime t1 = DateTime.Now;
+			MessageBox.Show("jhgfds");
+			DateTime t2 = DateTime.Now;
+			TimeSpan diff = t2.Subtract(t1);
+			logPrint(diff.TotalMilliseconds.ToString()+"\r\n");
 		}
 	}
 }

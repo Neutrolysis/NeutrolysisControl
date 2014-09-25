@@ -1,0 +1,14 @@
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Debug\Neutrolysis Control.exe.config
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Debug\Neutrolysis Control.exe
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Debug\Neutrolysis Control.pdb
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Debug\am\Neutrolysis Control.resources.dll
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\bin\Debug\en-US\Neutrolysis Control.resources.dll
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\NeutrolysisControl.MainForm.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\NeutrolysisControl.Properties.Resources.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\NeutrolysisControl.MainForm.am.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\NeutrolysisControl.MainForm.en-US.resources
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\NeutrolysisControl.csproj.GenerateResource.Cache
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\am\Neutrolysis Control.resources.dll
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\en-US\Neutrolysis Control.resources.dll
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\Neutrolysis Control.exe
+D:\Lab\Visual Studio 2012\Projects\NeutrolysisControl\NeutrolysisControl\obj\Debug\Neutrolysis Control.pdb

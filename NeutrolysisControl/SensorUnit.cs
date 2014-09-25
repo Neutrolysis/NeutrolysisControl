@@ -11,7 +11,7 @@ namespace NeutrolysisControl
 		int FIRE_ALARM_MIN_TEMP;
 		int FIRE_ALARM_MIN_SMOKE;
 
-		public double temp, smoke, humidity;
+		public double temp, smoke, humidity,power;
 
 		public SensorUnit()
 		{
